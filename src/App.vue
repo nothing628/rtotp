@@ -5,18 +5,18 @@ import Greet from "./components/Greet.vue";
 </script>
 
 <template>
-  <div class="container">
+  <div class="m-0 pt-[10vh] flex flex-col text-center justify-center">
     <h1>Welcome to Tauri!</h1>
 
-    <div class="row">
+    <div class="flex justify-center">
       <a href="https://vitejs.dev" target="_blank">
-        <img src="/vite.svg" class="logo vite" alt="Vite logo" />
+        <img src="/vite.svg" class="logo h-24 p-6 duration-700 vite" alt="Vite logo" />
       </a>
       <a href="https://tauri.app" target="_blank">
-        <img src="/tauri.svg" class="logo tauri" alt="Tauri logo" />
+        <img src="/tauri.svg" class="logo h-24 p-6 duration-700 tauri" alt="Tauri logo" />
       </a>
       <a href="https://vuejs.org/" target="_blank">
-        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+        <img src="./assets/vue.svg" class="logo h-24 p-6 duration-700 vue" alt="Vue logo" />
       </a>
     </div>
 
@@ -24,15 +24,15 @@ import Greet from "./components/Greet.vue";
 
     <p>
       Recommended IDE setup:
-      <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
+      <a href="https://code.visualstudio.com/" class="text-[#646cff] hover:text-[#535bf2] dark:hover:text-[#24c8db]" target="_blank">VS Code</a>
       +
-      <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
+      <a href="https://github.com/johnsoncodehk/volar" class="text-[#646cff] hover:text-[#535bf2] dark:hover:text-[#24c8db]" target="_blank">Volar</a>
       +
-      <a href="https://github.com/tauri-apps/tauri-vscode" target="_blank"
+      <a href="https://github.com/tauri-apps/tauri-vscode" class="text-[#646cff] hover:text-[#535bf2] dark:hover:text-[#24c8db]" target="_blank"
         >Tauri</a
       >
       +
-      <a href="https://github.com/rust-lang/rust-analyzer" target="_blank"
+      <a href="https://github.com/rust-lang/rust-analyzer" class="text-[#646cff] hover:text-[#535bf2] dark:hover:text-[#24c8db]" target="_blank"
         >rust-analyzer</a
       >
     </p>
@@ -44,6 +44,10 @@ import Greet from "./components/Greet.vue";
 <style scoped>
 .logo.vite:hover {
   filter: drop-shadow(0 0 2em #747bff);
+}
+
+.logo.tauri:hover {
+  filter: drop-shadow(0 0 2em #24c8db);
 }
 
 .logo.vue:hover {
