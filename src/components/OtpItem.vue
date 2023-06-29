@@ -4,43 +4,32 @@
         <div class="flex flex-row items-center">
             <img class="w-16 h-16 mr-4" src="../assets/firefox-logo.png" />
             <div class="flex flex-col">
-                <p class="text-base font-bold">Firefox</p>
-                <p class="text-xs leading-none">test@test.com</p>
-                <p class="text-2xl font-bold mt-2 leading-none">002 200</p>
-                <p class="text-xs leading-none">444 245</p>
+                <p class="text-slate-900 text-base font-bold">Firefox</p>
+                <p class="text-slate-900/70 text-xs leading-none">test@test.com</p>
+                <p class="text-slate-900 text-2xl font-bold mt-2 leading-none">002 200</p>
+                <p class="text-slate-900/70 text-xs leading-none">
+                    <span v-if="isShowNext">440 440</span>
+                    <span v-else>&nbsp;</span>
+                </p>
             </div>
         </div>
 
         <div>
             <!-- Timer here -->
-            <p>{{30-progressVal}}s</p>
+            <p class="text-slate-900/70 font-bold text-xl">{{ 30 - progressVal }}s</p>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import ProgressBar from './ProgressBar.vue';
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { computed } from 'vue'
 
-const progressVal = ref(0)
-const intervalId = ref<any>(null)
+const props = defineProps<{
+    progressVal: number
+}>()
 
-onMounted(() => {
-    intervalId.value = setInterval(() => {
-        let val = progressVal.value + 1;
-
-        if (val >= 30) {
-            val = 0;
-        }
-
-        progressVal.value = val
-    }, 1000);
+const isShowNext = computed(() => {
+    return (30 - props.progressVal) < 5
 })
-
-onBeforeUnmount(() => {
-    if (intervalId.value) {
-        clearInterval(intervalId.value)
-    }
-})
-
 </script>
